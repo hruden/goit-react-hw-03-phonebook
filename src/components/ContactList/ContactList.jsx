@@ -20,6 +20,7 @@ ContactList.propTypes = {
             id: PropTypes.string.isRequired,
             name: PropTypes.string,
             number: PropTypes.string,
+            length: PropTypes.number,
         })
     ),
     removeContact: PropTypes.func
