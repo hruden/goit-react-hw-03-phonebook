@@ -49,6 +49,7 @@ export class App extends Component {
     this.setState({ contacts: updatedContact });
   };
   render() {
+    const conactLength = this.state.contacts.length
     return (
       <Container>
         <h1>Phonebook</h1>
@@ -56,7 +57,7 @@ export class App extends Component {
 
         <h2>Contacts</h2>
         <Filter searchContact={this.state.searchContact} handleFind={this.handleFind}/>
-        {this.state.contacts.length ? (<ContactList contacts={this.findContact()} removeContact={this.removeContact}/>
+        {conactLength ? (<ContactList contacts={this.findContact()} removeContact={this.removeContact}/>
         ):(<p>No matches found!</p>)} 
       </Container>
     );
