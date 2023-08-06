@@ -9,7 +9,7 @@ const LS_KEY = 'contacts'
 export class App extends Component {
   state = {
     contacts: [],
-    filter: '',
+    searchContact: '',
   };
   componentDidMount(){
     const contactLS = JSON.parse(localStorage.getItem(LS_KEY));
@@ -40,7 +40,7 @@ export class App extends Component {
     });
   };
   findContact = () =>{
-    return this.state.contacts.filter(({name}) => name.toLocaleLowerCase().includes(this.state.filter)
+    return this.state.contacts.filter((contact) => contact.name.toLocaleLowerCase().includes(this.state.searchContact)
   )}
   removeContact = (id) => {
     const updatedContact = this.state.contacts.filter(
@@ -55,7 +55,7 @@ export class App extends Component {
         <ContactForm createContact={this.createContact}/>
 
         <h2>Contacts</h2>
-        <Filter filter={this.state.filter} handleFind={this.handleFind}/>
+        <Filter searchContact={this.state.searchContact} handleFind={this.handleFind}/>
         {this.findContact().length ? (<ContactList contacts={this.findContact()} removeContact={this.removeContact}/>
         ):(<p>No matches found!</p>)} 
       </Container>
