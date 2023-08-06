@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 export const Filter =({searchContact, handleFind})=>{
     return(
     <>
@@ -14,7 +14,7 @@ export const Filter =({searchContact, handleFind})=>{
     )
 }
 
-// Filter.propTypes = {
-//     searchContact: PropTypes.string.isRequired,
-//     handleFind: PropTypes.func,
-// }
+Filter.propTypes = {
+    searchContact: PropTypes.string.isRequired,
+    handleFind: PropTypes.func,
+}

@@ -12,7 +12,7 @@ export class App extends Component {
     searchContact: '',
   };
   componentDidMount(){
-    const contactLS = JSON.parse(localStorage.getItem(LS_KEY));
+    const contactLS = JSON.parse(localStorage.getItem(LS_KEY)) || [];
     this.setState({contacts: contactLS})
   }
   componentDidUpdate(prevProps, prevState){
@@ -49,7 +49,6 @@ export class App extends Component {
     this.setState({ contacts: updatedContact });
   };
   render() {
-    // const conactLength = this.state.contacts.length > 0
     return (
       <Container>
         <h1>Phonebook</h1>
