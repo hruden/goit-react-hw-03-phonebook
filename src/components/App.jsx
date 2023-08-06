@@ -57,7 +57,7 @@ export class App extends Component {
 
         <h2>Contacts</h2>
         <Filter searchContact={this.state.searchContact} handleFind={this.handleFind}/>
-        { this.state.contacts.length ? (<ContactList contacts={this.findContact()} removeContact={this.removeContact}/>
+        { this.findContact().length ? (<ContactList contacts={this.findContact()} removeContact={this.removeContact}/>
         ): (<p>No matches found!</p>)} 
       </Container>
     );
